@@ -339,7 +339,7 @@ section {
 .hero__content {
     width: 100%;
     padding-top: 30px;
-    padding-left: 30px;
+    padding-left: 0;
 }
 
 
@@ -654,25 +654,24 @@ section {
 .reasons {
     display: grid;
 
-    grid-template-columns:
-        repeat(4, minmax(0, 250px));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 
-    gap: 14px;
+    gap: 20px;
 
-    justify-content: center;
+    width: 100%;
 }
 
 
 .reason {
-    min-height: 220px;
+    min-height: 280px;
 
-    padding: 24px 22px;
+    padding: 30px 28px;
 
     display: flex;
 
     flex-direction: column;
 
-    border-radius: 16px;
+    border-radius: 20px;
 
     background:
         linear-gradient(
@@ -691,11 +690,11 @@ section {
 
 
 .reason__number {
-     margin-bottom: 34px;
+       margin-bottom: 40px;
 
     color: #d0d2cc;
 
-    font-size: 48px;
+    font-size: 52px;
 
     font-weight: 300;
 
@@ -717,13 +716,12 @@ section {
 
 
 .reason p {
-    max-width: 230px;
-
+max-width: none;
     margin: 12px 0 0;
 
     color: #9da29c;
 
-    font-size: 12px;
+    font-size: 13px;
 
     line-height: 1.55;
 }
@@ -836,7 +834,7 @@ section {
 
 
 .contacts__visual {
-    min-height: 440px;
+    min-height: 500px;
 
     position: relative;
 
@@ -845,37 +843,45 @@ section {
     align-items: center;
 
     justify-content: flex-end;
+
+    overflow: visible;
+
+    border-radius: 24px;
 }
 
 
 .contact-leaf {
     position: absolute;
 
-    left: -70px;
+    left: -195px;
+    top: 50%;
 
-    bottom: -100px;
+    width: 480px;
+    height: 480px;
 
-    width: 370px;
+    transform: translateY(-50%);
 
-    height: 370px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    border-radius: 50%;
+    overflow: visible;
 
-    overflow: hidden;
+    opacity: .9;
 
-    opacity: .65;
+    z-index: 1;
 
-    z-index: 0;
+    pointer-events: none;
 }
 
-
 .contact-leaf img {
-    width: 100%;
+width: 100%;
     height: 100%;
 
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
 
-    filter: brightness(.55);
+    filter: brightness(.65);
 }
 
 
@@ -1306,23 +1312,31 @@ section {
     }
 
 
-    .contacts__visual {
-        min-height: auto;
+        .contacts__visual {
+        min-height: 500px;
+
+        justify-content: center;
+        overflow: hidden;
     }
 
-
     .contact-leaf {
+        left: 50%;
+        top: 10px;
+
         width: 250px;
         height: 250px;
 
-        left: -30px;
-        bottom: -40px;
-    }
+        transform: translateX(-50%);
 
+        opacity: .55;
+    }
 
     .contact-form {
         width: 100%;
     }
+
+
+    
 
 
     .footer__inner {
