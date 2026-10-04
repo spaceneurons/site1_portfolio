@@ -103,7 +103,7 @@ img {
 
 .container {
     width: min(
-        calc(100% - 64px),
+        calc(100% - 280px),
         var(--container)
     );
 
@@ -115,7 +115,7 @@ img {
 .contacts .container,
 .footer .container {
     width: min(
-        calc(100% - 120px),
+        calc(100% - 280px),
         1320px
     );
 }
@@ -141,6 +141,12 @@ section {
     z-index: 20;
 }
 
+.header .container {
+    width: min(
+        calc(100% - 280px),
+        1320px
+    );
+}
 
 .header__inner {
     min-height: 82px;
@@ -202,7 +208,7 @@ section {
 
     align-items: center;
 
-    gap: 38px;
+    gap: 42px;
 
     margin-left: 80px;
 }
@@ -211,7 +217,7 @@ section {
 .nav a {
     color: #c5c7c2;
 
-    font-size: 13px;
+    font-size: 15px;
 
     transition:
         color .2s ease;
@@ -228,21 +234,21 @@ section {
 
     align-items: center;
 
-    gap: 28px;
+    gap: 32px;
 }
 
 
 .city {
     color: #c5c7c2;
 
-    font-size: 13px;
+    font-size: 15px;
 }
 
 
 .location-icon {
-    font-size: 14px;
+    font-size: 18px;
 
-    margin-left: 3px;
+    margin-left: 4px;
 }
 
 
@@ -314,7 +320,7 @@ section {
 
 .hero__container {
     width: min(
-        calc(100% - 120px),
+        calc(100% - 280px),
         1320px
     );
 }
@@ -347,18 +353,20 @@ section {
         max-width: 100%;
 
         font-size: clamp(
-            48px,
-            7vw,
-            64px
+            44px,
+            6vw,
+            58px
         );
-        line-height: 0.95;
+        line-height: 0.98;
     }
 
 
 .hero__description {
-        max-width: 430px;
-    font-size: 14px;
-    line-height: 1.45;
+        max-width: 460px;
+
+    font-size: 15px;
+
+    line-height: 1.5;
 }
 
 
@@ -498,34 +506,34 @@ section {
 
 
 .about h2 {
-    max-width: 760px;
+      max-width: 760px;
 
     margin: 0;
 
     font-size: clamp(
-        38px,
-        4vw,
-        58px
+        34px,
+        3.5vw,
+        48px
     );
 
     line-height: 1.05;
 
     font-weight: 400;
 
-    letter-spacing: -2px;
+    letter-spacing: -1.5px;
 }
 
 
 .about__heading p {
-    max-width: 430px;
+      max-width: 430px;
 
     margin: 0;
 
     color: #9fa49e;
 
-    font-size: 13px;
+    font-size: 15px;
 
-    line-height: 1.55;
+    line-height: 1.5;
 }
 
 
@@ -533,10 +541,10 @@ section {
     display: grid;
 
     grid-template-columns:
-        minmax(0, 1.7fr)
-        minmax(280px, .7fr);
+        1.35fr
+        .65fr;
 
-    gap: 28px;
+    gap: 80px;
 
     align-items: start;
 }
@@ -788,8 +796,8 @@ max-width: none;
 }
 
 .cart {
-    width: 22px;
-    height: 22px;
+    width: 28px;
+    height: 28px;
 
     display: flex;
 
@@ -802,8 +810,8 @@ max-width: none;
 }
 
 .cart svg {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
 }
 .socials {
     display: flex;
@@ -853,7 +861,7 @@ max-width: none;
 .contact-leaf {
     position: absolute;
 
-    left: -195px;
+    left: -145px;
     top: 50%;
 
     width: 480px;
@@ -884,83 +892,262 @@ width: 100%;
     filter: brightness(.65);
 }
 
+/* =====================================================
+   CONTACT FORM
+===================================================== */
 
 .contact-form {
     width: 540px;
 
-    padding: 16px;
+    padding: 0;
 
     position: relative;
 
     z-index: 2;
 
     display: flex;
-
     flex-direction: column;
 
-    gap: 12px;
+    gap: 0;
 
-    border-radius: 22px;
+    /* УБИРАЕМ ЗЕЛЁНУЮ ОБОЛОЧКУ */
+    background: transparent;
 
-    background:
-        rgba(29, 36, 30, .78);
+    border: 0;
 
-    border: 1px solid
-        rgba(255, 255, 255, .10);
+    border-radius: 0;
 
-    backdrop-filter: blur(20px);
+    box-shadow: none;
 
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
+
+/* =====================================================
+   FORM FIELD
+===================================================== */
+
+.form-field {
+    display: flex;
+    align-items: center;
+
+    min-height: 72px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, .25);
+}
+
+
+.form-field:focus-within {
+    border-bottom-color: rgba(245, 244, 239, .75);
+}
+
+
+/* =====================================================
+   ROUND ICON
+===================================================== */
+
+.form-field__icon {
+    flex: 0 0 42px;
+
+    width: 42px;
+    height: 42px;
+
+    margin-right: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(245, 244, 239, .08);
+
+    border: 1px solid rgba(245, 244, 239, .16);
+
+    color: #d8dbd4;
+}
+
+
+.form-field__icon svg {
+    width: 18px;
+    height: 18px;
+
+    stroke: currentColor;
+
+    fill: none;
+
+    stroke-width: 1.5;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =====================================================
+   INPUTS
+===================================================== */
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
 
+    min-width: 0;
+
+    padding: 15px 0;
+
     border: 0;
+
+    border-radius: 0;
 
     outline: none;
 
-    padding: 15px 18px;
+    background: transparent;
 
-    border-radius: 12px;
+    color: var(--white);
 
-    background:
-        rgba(255, 255, 255, .15);
+    font-size: 14px;
 
-    color: white;
-
-    font-size: 12px;
+    font-weight: 300;
 }
 
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-    color: #d1d3ce;
+    color: #aeb3ad;
+
+    opacity: 1;
 }
 
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-    background:
-        rgba(255, 255, 255, .20);
+    background: transparent;
 }
 
 
 .contact-form textarea {
-    height: 105px;
+    min-height: 110px;
 
     resize: none;
 }
 
 
+/* =====================================================
+   CHECKBOX
+===================================================== */
+
+.form-consent {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 11px;
+
+    margin-top: 22px;
+
+    color: #969c95;
+
+    font-size: 10px;
+
+    line-height: 1.45;
+
+    cursor: pointer;
+}
+
+
+.form-consent input {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+.form-consent__box {
+    flex: 0 0 16px;
+
+    width: 16px;
+    height: 16px;
+
+    margin-top: 1px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(245, 244, 239, .35);
+
+    border-radius: 4px;
+
+    background: rgba(255, 255, 255, .03);
+
+    transition:
+        background .2s ease,
+        border-color .2s ease;
+}
+
+
+.form-consent__box::after {
+    content: "";
+
+    width: 7px;
+    height: 4px;
+
+    border-left: 1.5px solid #111;
+
+    border-bottom: 1.5px solid #111;
+
+    transform: rotate(-45deg) scale(0);
+
+    transition: transform .15s ease;
+}
+
+
+.form-consent input:checked + .form-consent__box {
+    background: var(--white);
+
+    border-color: var(--white);
+}
+
+
+.form-consent input:checked + .form-consent__box::after {
+    transform: rotate(-45deg) scale(1);
+}
+
+
+.form-consent__text {
+    max-width: 420px;
+}
+
+
+.form-consent__text a {
+    color: #c8ccc5;
+
+    text-decoration: underline;
+
+    text-decoration-color: rgba(200, 204, 197, .35);
+
+    text-underline-offset: 2px;
+}
+
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
 .submit-button {
     width: 100%;
 
-    min-height: 48px;
+    min-height: 52px;
 
-    padding: 0 20px;
+    margin-top: 24px;
+
+    padding: 0 22px;
 
     display: flex;
 
@@ -977,26 +1164,26 @@ width: 100%;
 
     cursor: pointer;
 
-    font-size: 12px;
+    font-size: 13px;
+
+    font-weight: 400;
 
     transition:
-        transform .2s ease;
+        transform .2s ease,
+        background .2s ease;
 }
 
 
 .submit-button:hover {
     transform: translateY(-2px);
+
+    background: #ffffff;
 }
 
 
-.contact-form small {
-    padding: 0 2px 3px;
-
-    color: #8e948d;
-
-    font-size: 9px;
+.submit-button .arrow {
+    font-size: 18px;
 }
-
 
 /* =====================================================
    FOOTER
@@ -1074,11 +1261,24 @@ width: 100%;
 
     .container {
         width: min(
-            calc(100% - 48px),
+            calc(100% - 80px),
             var(--container)
         );
     }
+.about .container,
+    .services .container,
+    .contacts .container,
+    .footer .container {
+        width: calc(100% - 80px);
+    }
 
+    .hero__container {
+        width: calc(100% - 80px);
+    }
+
+    .header .container {
+        width: calc(100% - 80px);
+    }
 
     .nav {
         gap: 20px;
@@ -1160,18 +1360,18 @@ width: 100%;
 @media (max-width: 650px) {
 
     .container {
-        width: calc(100% - 32px);
+        width: calc(100% - 48px);
     }
 
      .about .container,
     .services .container,
     .contacts .container,
     .footer .container {
-        width: calc(100% - 40px);
+        width: calc(100% - 48px);
     }
 
  .hero__container {
-        width: calc(100% - 32px);
+        width: calc(100% - 48px);
     }
     .hero__visual {
     transform: none;
@@ -1194,7 +1394,7 @@ width: 100%;
     .hero {
         padding-top: 110px;
 
-        padding-bottom: 70px;
+        padding-bottom: 35px;
     }
 
 
@@ -1206,12 +1406,15 @@ width: 100%;
 
 
     .hero h1 {
-        font-size: 45px;
+        font-size: 42px;
 
-        letter-spacing: -2px;
+        letter-spacing: -1.5px;;
     }
 
-
+.about__heading p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
     .hero__description {
         font-size: 14px;
     }
@@ -1249,14 +1452,23 @@ width: 100%;
     }
 
 
-    .about h2,
-    .section-title h2,
-    .contacts h2 {
-        font-size: 37px;
-
-        letter-spacing: -1.5px;
+    .about h2 {
+    font-size: 34px;
+    letter-spacing: -1.2px;
+}
+.section-title {
+        text-align: left;
+        margin-bottom: 35px;
     }
 
+.section-title h2,
+.contacts h2 {
+    font-size: 37px;
+    letter-spacing: -1.5px;
+}
+.section-title h2 {
+        text-align: left;
+    }
 
     .about__grid {
         grid-template-columns: 1fr;
@@ -1288,17 +1500,24 @@ width: 100%;
 
 
     .services {
-        padding: 70px 0;
+        padding-top: 35px;
+        padding-bottom: 70px;
     }
 
 
     .reasons {
+       width: 100%;
         grid-template-columns: 1fr;
+        gap: 12px;
+
     }
 
 
     .reason {
+          width: 100%;
         min-height: 210px;
+        text-align: left;
+        align-items: flex-start;
     }
 
 
@@ -1313,22 +1532,15 @@ width: 100%;
 
 
         .contacts__visual {
-        min-height: 500px;
+        min-height: auto;
 
         justify-content: center;
         overflow: hidden;
     }
 
     .contact-leaf {
-        left: 50%;
-        top: 10px;
+                display: none;
 
-        width: 250px;
-        height: 250px;
-
-        transform: translateX(-50%);
-
-        opacity: .55;
     }
 
     .contact-form {
@@ -1365,5 +1577,13 @@ width: 100%;
     
 .hero__content {
         padding-left: 0;
+        padding-top: 0;
+        transform: translateY(-35px);
     }
+ .reason__number,
+    .reason h3,
+    .reason p {
+        text-align: left;
+    }
+    
 }
